@@ -35,6 +35,7 @@ export default {
       type: Boolean,
       default: false
     },
+    ready: Function
   },
 
   computed: {
@@ -96,7 +97,7 @@ export default {
       };
       this.prepareEditorConfig(editorConfig)
       this.quill = new Quill(this.$refs.quillContainer, editorConfig)
-      this.$emit('loaded', this.quill);
+      this.$emit('ready', this.quill);
     },
 
     setEditorElement() {
