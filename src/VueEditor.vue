@@ -96,6 +96,7 @@ export default {
       };
       this.prepareEditorConfig(editorConfig)
       this.quill = new Quill(this.$refs.quillContainer, editorConfig)
+      this.$emit('loaded', this.quill);
     },
 
     setEditorElement() {
