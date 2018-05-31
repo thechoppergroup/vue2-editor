@@ -5,11 +5,11 @@
     <div class="columns">
       <div class="editorWrapper column col-6 col-sm-12">
         <vue-editor
-
           useCustomImageHandler
           @imageAdded="handleImageAdded"
           :editorOptions="editorSettings"
-          v-model="editor2Content">
+          v-model="editor2Content"
+          @ready="handleReady">
         </vue-editor>
         <button class="btn btn-primary" @click="saveContent(editor2Content)">Save</button>
 
@@ -67,6 +67,9 @@ export default {
 
   },
   methods: {
+    handleReady: function(quill) {
+        console.log('quill', quill);
+    },
     setEditor1(editor) {
       this.editor1Content = 'Set Editor 1 Content'
     },
